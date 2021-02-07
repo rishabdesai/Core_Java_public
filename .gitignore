@@ -10,6 +10,7 @@ local.properties
 .loadpath
 .recommenders
 .classpath
+.project
 
 *target*
 *.jar
