@@ -1,3 +1,4 @@
+package lambda;
 /*Lambda Expression 
  * lambda body inside curly brackets
  */
