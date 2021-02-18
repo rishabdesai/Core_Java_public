@@ -38,8 +38,25 @@ public class PassByReference {
 		PassByReference.swap2(arr1);
 		num1 = arr1[0];
 		num2 = arr1[1];
+		
+		System.out.println("num1 :"+num1);
+		System.out.println("num2 :"+num2);
 
 		System.out.println(Arrays.toString(arr1));
 	}
 
 }
+
+//by creating single element array
+/*
+	public static void main(String[] args) {
+	int[] num = { 1 };
+	System.out.println("number= " + num[0]);
+	update(num);
+	System.out.println("number= " + num[0]);
+}
+private static void update(int[] num) {
+	num[0]++;
+}
+}
+*/
