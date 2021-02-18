@@ -1,3 +1,8 @@
+/*instance variable : non-static variable declared inside the class
+ * class level variable : static variable declared inside the class
+ * 
+ */
+
 package pages;
 
 public class StaticKeyword {
@@ -21,6 +26,11 @@ public class StaticKeyword {
 		System.out.println(s1.num1);
 		System.out.println(s1.num2);
 		System.out.println(StaticKeyword.num3);
+		
+		/* error as main() method is static hence cannot access num1
+		 to access num1 directly, then declare num1 as static or use object reference of class StaticKeyword.
+		*/
+		//System.out.println(num1); 
 		
 	}
 }
