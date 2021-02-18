@@ -27,7 +27,7 @@ class Person
 //   superclass inherit into subclass.
 //Except constructor, all the static and non-static methods of superclass inherit
 //   into the subclass.
-class Employee extends Person  //Inheritance
+class Employee extends Persons  //Inheritance
 {
 	private int empid;
 	private float salary;
@@ -38,7 +38,7 @@ class Employee extends Person  //Inheritance
 	}
 	
 	public Employee(String name, int age, int empid, float salary) {
-		super( name, age );  //implicit call to superclass constructor
+		super( name, age );  // call to superclass constructor
 		this.empid = empid;
 		this.salary = salary;
 	}
@@ -46,13 +46,13 @@ class Employee extends Person  //Inheritance
 	public void displayRecord()  //method of sub-class
 	{
 		//this.showRecord();	//Ok
-		super.showRecord();//Ok  //implicit call to superclass method
+		super.showRecord();//Ok  // call to superclass method
 		System.out.println("Empid	:	"+this.empid);
 		System.out.println("Salary	:	"+this.salary);
 	}
 	public void printRecord()
 	{
-		super.printRecord();  //implicit call to superclass method
+		super.printRecord();  // call to superclass method
 		System.out.println("Empid	:	"+this.empid);
 		System.out.println("Salary	:	"+this.salary);
 	}
@@ -61,7 +61,7 @@ public class Program {
 
 	public static void main1(String[] args) {
 		//Person  p = new Person();
-		Person  p = new Person("ABC",23);  //
+		Persons  p = new Persons("ABC",23);  //
 		p.showRecord();
 	}
 	public static void main2(String[] args) {
@@ -84,11 +84,11 @@ public class Program {
 		System.out.println();
 		
 		//Person p = ( Person)emp;	//Upcasting : Ok
-		Person p = emp;	//Upcasting : Ok
+		Persons p = emp;	//Upcasting : Ok
 		p.showRecord();
 	}
 	public static void main6(String[] args) {
-		Person p = new Employee("ABC",23,2113,35000);
+		Persons p = new Employee("ABC",23,2113,35000);
 		p.showRecord();
 		
 		System.out.println();
@@ -96,11 +96,11 @@ public class Program {
 		emp.displayRecord();
 	}
 	public static void main7(String[] args) {
-		Person p = new Person("ABC",23);
+		Persons p = new Persons("ABC",23);
 		Employee emp = (Employee) p; //ClassCastException
 	}
 	public static void main8(String[] args) {
-		Person p = new Employee();
+		Persons p = new Employee();
 		p.printRecord();
 	}
 }

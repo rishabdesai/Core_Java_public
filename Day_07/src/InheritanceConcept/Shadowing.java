@@ -29,11 +29,4 @@ public class Shadowing {
 		b.print(); //output = inside B class, shadowing of superclass print() method.
 	}
 	
-//reference of A class and object of B class	
-	public static void main(String[] args) {
-		A c = new B();
-		System.out.println(c.x); //output =10, 
-		
-		c.print(); //output = inside B class
-	}
 }
