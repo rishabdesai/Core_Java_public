@@ -32,6 +32,7 @@ public class ArrayTypes {
 			System.out.println(e);
 		}
 		System.out.println();
+		
 		//Array of object of reference type
 		EmpDetails[] emp1 = new EmpDetails[3];
 		
