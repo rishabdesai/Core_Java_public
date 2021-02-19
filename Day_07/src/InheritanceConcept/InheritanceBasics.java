@@ -66,13 +66,15 @@ public class InheritanceBasics {
 		Employee1 emp = new Employee1("XYZ", 45, 9876);
 		emp.printEmployee(); // calling method of subclass
 		System.out.println("------------------");
-		emp.printPerson(); // calling method of superclass
+		emp.printPerson(); // on subclass reference, we can call method of superclass
 	}
 
 //in case of upcasting, using superclass reference, we can 
 //access inherited members & OVERRIDEN METHODS of subclass only.
 	public static void main3(String[] args) {
 		Person1 p = new Employee1();
+		p.printPerson(); //ok super-class reference can call superclass method
 		p.print(); // print() is overridden in subclass
+		//p.printEmployee(); //error. Using superclass ref, we cannot call subclass methods
 	}
 }
