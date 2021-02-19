@@ -1,82 +1,81 @@
 package InheritanceConcept;
 
-class Persons {
+class Person2
+{
 	private String name;
 	private int age;
-
-	public Persons() {
-		this("", 0);
+	public Person2() {
+		this("",0);
 	}
-
-	public Persons(String name, int age) {
+	public Person2(String name, int age) {
 		this.name = name;
 		this.age = age;
 	}
-
-	public void showRecord() // method of super class
+	public void printPerson()  
 	{
-		System.out.println("Name	:	" + this.name);
-		System.out.println("Age	:	" + this.age);
+		System.out.println("inside printPerson() method of Person2 class");
+		System.out.println("Name	:	"+this.name);
+		System.out.println("Age	:	"+this.age);
 	}
-
-	public void printRecord() {
-		System.out.println("Name	:	" + this.name);
-		System.out.println("Age	:	" + this.age);
+	public void print()
+	{
+		System.out.println("inside print() method of Person2 class");
+		System.out.println("Name	:	"+this.name);
+		System.out.println("Age	:	"+this.age);
 	}
 }
 
-class Employees extends Persons // Inheritance
+class Employee2 extends Person2  //Inheritance
 {
 	private int empid;
-	private float salary;
-
-	public Employees() {
+	
+	public Employee2() {
 		this.empid = 0;
-		this.salary = 0;
 	}
-
-	public Employees(String name, int age, int empid, float salary) {
-		super(name, age); // call to superclass constructor
+	
+	public Employee2(String name, int age, int empid) {
+		super( name, age );  // call to superclass constructor
 		this.empid = empid;
-		this.salary = salary;
 	}
 
-	public void displayRecord() // method of sub-class
+	public void printEmployee()  //method of sub-class
 	{
-		super.showRecord();// Ok // call to superclass method
-		System.out.println("Empid	:	" + this.empid);
-		System.out.println("Salary	:	" + this.salary);
+		System.out.println("inside printEmployee() method of Employee2 class");
+		super.printPerson();  // call to superclass method
+		System.out.println("Empid	:	"+this.empid);
 	}
-
-	public void printRecord() {
-		super.printRecord(); // call to superclass method
-		System.out.println("Empid	:	" + this.empid);
-		System.out.println("Salary	:	" + this.salary);
+	public void print()
+	{
+		System.out.println("inside print() method of Employee2 class");
+		super.printPerson();  // call to superclass method
+		System.out.println("Empid	:	"+this.empid);
 	}
 }
 
 public class UpcastinDowncasting {
 
-	public static void main1(String[] args) {
-		Employees emp = new Employees("XYZ", 33, 1234, 99000);
-		Persons p = emp; // Upcasting : Ok
-		p.showRecord(); // method of superclass
+	public static void main(String[] args) {
+		Employee2 emp = new Employee2("XYZ", 33, 1234);
+		Person2 p = emp; // Upcasting : Ok
+		p.printPerson(); // method of superclass
 	}
 
 	public static void main2(String[] args) {
-		Persons p = new Employees("XYZ", 33, 1234, 99000); // upcasting
-		Employees emp = (Employees) p; // Downcasting
-		emp.displayRecord(); // method of subclass
+		Person2 p = new Employee2("XYZ", 33, 1234); // upcasting
+		Employee2 emp = (Employee2) p; // Downcasting
+		emp.printEmployee(); // method of subclass
 	}
 
 	public static void main3(String[] args) {
-		Persons p = new Persons("XYZ", 33);
-		Employees emp = (Employees) p; // ClassCastException
+		Person2 p = new Person2("XYZ", 33);
+		Employee2 emp = (Employee2) p; // ClassCastException
 	}
 
-	public static void main(String[] args) {
-		Persons p = new Employees("XYZ", 33, 1234, 9900); // upcasting
-		p.printRecord(); // method of subclass = Dynamic Method Dispatch
+//in case of upcasting, using superclass reference, we can 
+//access inherited members & OVERRIDEN METHODS of sub class only.	
+	public static void main4(String[] args) {
+		Person2 p = new Employee2("XYZ", 33, 1234); // upcasting
+		p.print(); // print() is overriden in subclass (Dynamic Method Dispatch)
 	}
 
 }
