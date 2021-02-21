@@ -23,9 +23,10 @@ public class Program {
 	public static void main(String[] args) {
 
 		// Integer
-		Square<Integer> s1 = new Square<>();  //<Integer> : Type argument
-		s1.setSides(5);
-		System.out.println(s1.getSides());
+		Square<Integer> s1 = new Square<>();  	//<Integer> : Type argument (MUST be reference type)
+		s1.setSides(5);  						//auto-boxing
+		int n1 = s1.getSides();					//auto-unboxing
+		System.out.println(n1);		
 
 		// Float
 		Square<Float> f1 = new Square<>();
